@@ -6,6 +6,7 @@ import './App.css';
 import InputField from './components/InputField';
 //import { Todo } from './components/model';
 import TodoList from './components/TodoList';
+import ProductList from '../src/components/products/ProductList'
 
 
 export default function App() {  
@@ -67,6 +68,7 @@ export default function App() {
           completedTodos={completedTodos}
           setCompletedTodos={setCompletedTodos}
         />
+        <ProductList />
 
       </div>
     </DragDropContext>

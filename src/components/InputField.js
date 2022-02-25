@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import '../components/styles.css';
+// import App from '../App';
 
 // interface Props {
 //     todo: string;
@@ -11,12 +12,17 @@ export default function InputField() {
 
     const inputRef = useRef(null);  //hovered over the ref item below to find the type
     const [todo, setTodo] = useState('');
-
-    function handleAdd(e) {
-        e.preventDefault();
-        console.log(todo);
-    }
-
+    const [todos, setTodos] = useState([]);
+  
+    const handleAdd = (e) => {
+      e.preventDefault();
+  
+      if (todo) {
+        setTodos([...todos, { id: Date.now(), todo, isDone: false }]);
+        setTodo('');
+      }
+      console.log(todo);
+    };
 
 
     return (
